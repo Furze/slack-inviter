@@ -1,9 +1,12 @@
-form.form-horizontal(method='post' action='/invite')
-    fieldset
-        legend Sign up for our Slack Team
-        div.form-group
-            label.col-sm-2.control-label(for="inputEmail") Email
-            div.col-sm-6
-                input.form-control#inputEmail(type="email" placeholder="email" name="email")
-            div.col-sm-4
-                button.btn.btn-primary.pull-right(type="submit") Submit
+#home-address-container.default-container
+    .address-search-container.in(aria-expanded='true', aria-hidden='false', style='height: auto;')
+        .font-large.bold.center.address-search-title First enter your email address to join:
+        .row
+            .col-xs-12.col-sm-12.col-md-10.col-md-offset-1
+                .row.font-large
+                    form.address-search-form(name='signupForm', method='post' action='/invite')
+                        .col-sm-10.col-xs-12
+                            input.form-input.ng-pristine.ng-untouched.ng-valid.ng-valid-notempty(placeholder='Email Address', name='email', cm-notempty='')
+                        .col-sm-1.col-xs-12
+                            button#address-search-go.ui-circle-large.relative(type='submit', ng-class='{active: proceed}')
+                                span.ui-circle-inner GO
