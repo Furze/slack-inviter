@@ -1,0 +1,9 @@
+form.form-horizontal(method='post' action='/invite')
+    fieldset
+        legend Sign up for our Slack Team
+        div.form-group
+            label.col-sm-2.control-label(for="inputEmail") Email
+            div.col-sm-6
+                input.form-control#inputEmail(type="email" placeholder="email" name="email")
+            div.col-sm-4
+                button.btn.btn-primary.pull-right(type="submit") Submit
