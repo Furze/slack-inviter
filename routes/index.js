@@ -22,7 +22,7 @@ router.get('/', function(req, res, next) {
       }
     }
     //console.log(usersOnline + "/" + totalUsers);
-    res.render('index', { title: 'Tech Offtopic - Sponsored by Bigpipe', numOnline: usersOnline, totalUsers: totalUsers });
+    res.render('index', { title: 'Tech Offtopic - Slack Invite', numOnline: usersOnline, totalUsers: totalUsers });
   });
 });
 
