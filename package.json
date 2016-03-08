@@ -13,6 +13,6 @@
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0",
-    "slack-api-client": "git+https://github.com/OvertimeNZ/coffeescript-slack-api-client.git"
+    "slack-api-client": "git+https://github.com/Furze/slack-api-client.git"
   }
 }

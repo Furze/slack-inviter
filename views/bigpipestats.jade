@@ -1,0 +1,24 @@
+#home-plan-features.default-container.ng-scope
+    .row
+        .col-xs-10.col-xs-offset-1.col-sm-10.col-sm-offset-1.col-md-12.col-md-offset-0.col-lg-12.col-lg-offset-0
+            #banner-holder.visible-xs.visible-sm.relative
+                .left-box.absolute
+                .right-box.absolute
+                .banner.absolute
+                    span.title.bold All of our plans include:
+            #banner-holder.hidden-xs.hidden-sm.relative
+                .left-box.absolute
+                .right-box.absolute
+                .banner.absolute
+                    .banner-inner.relative
+                        .col-sm-3
+                            .title.left
+                                span.bold Current Stats:
+                        .col-sm-9
+                            .col-sm-4
+                                span.title.left.features-list-text Users online: #{numOnline}
+                            .col-sm-4
+                                span.title.left.features-list-text Total users: #{totalUsers}
+                            .col-sm-4
+                                span.title.left.features-list-text Dad jokes: 9001
+                        //img.features-list-image(width='25', height='25', src='images/tick.svg')
