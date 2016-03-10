@@ -1,6 +1,41 @@
 extends layout
 
 block content
-  include bigpipeSelector
-  include bigpipeform
-  include bigpipestats
+  .row.imagebar
+    .lazerkiwi
+  .row.signup-form
+    br
+    .col-sm-10.col-sm-offset-1
+      form.form-horizontal(name='signupForm', method='post' action='/invite')
+        fieldset
+          legend Sign up
+          .form-group
+            label.col-lg-2.control-label(for='inputEmail') Email
+            .col-lg-10
+              input#inputEmail.form-control(type='email', placeholder='Email',name='email', autocomplete='off', style='background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAALZJREFUOBFjYKAANDQ0rGWiQD9IqzgL0BQ3IKMXiB8AcSKQ/waIrYDsKUD8Fir2pKmpSf/fv3+zgPxfzMzMSbW1tbeBbAaQC+b+//9fB4h9gOwikCAQTAPyDYHYBciuBQkANfcB+WZAbPP37992kBgIUOoFBiZGRsYkIL4ExJvZ2NhAXmFgYmLKBPLPAfFuFhaWJpAYEBQC+SeA+BDQC5UQIQpJYFgdodQLLyh0w6j20RCgUggAAEREPpKMfaEsAAAAAElFTkSuQmCC"); background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; background-repeat: no-repeat;')
+              .checkbox
+                label
+                  input(type='checkbox')
+                  |  I realise my email address is sign up for spam
+          .form-group
+            .col-lg-10.col-lg-offset-2
+              button.btn.btn-primary.pull-right(type='submit') Submit
+  .row
+    .col-sm-10.col-sm-offset-1
+      legend Slack Stats
+      .row
+        .col-sm-10.col-sm-offset-1
+          .stats
+            .user-stats.js-gauge.gauge#user-stats
+          .stats
+            .js-gauge.gauge#chan-stats
+          .stats
+           .js-gauge.gauge#meme-stats
+
+  script(src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js")
+  script(src="js/JustGauge.js")
+  script new JustGage({ id: "user-stats", value: #{onlineUsers}, min: 0, max: #{totalUsers}, title: "Users Online", label: "" });
+  script new JustGage({ id: "chan-stats", value: #{messagesLast3h}, min: 0, max: 100, title: "Messages in the last 3 hours", label: "(stupid slack api limits)" });
+  script new JustGage({ id: "meme-stats", value: #{onlineUsers}, min: 0, max: #{totalUsers}, title: "Users Online", label: "" });
+
+
